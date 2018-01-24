@@ -1,0 +1,9 @@
+body {
+  background-color: lightgrey;
+  background-image: url('/background.jpg');
+  color: white !important;
+}
+
+.app-title {
+  font-weight: bold;
+}
