@@ -7,3 +7,14 @@ body {
 .app-title {
   font-weight: bold;
 }
+
+.list-group {
+  color: black;
+}
+
+.select {
+   flex: none !important;
+   display: block;
+   width: auto !important;
+   border-radius: 0 3px 3px 0!important;
+}
