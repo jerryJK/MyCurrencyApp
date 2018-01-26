@@ -22,7 +22,7 @@ class TransactionInput extends Component {
   handleCurrencyChange = (event) => {
     this.setState(
       {currency: event.target.value},
-      ()=>this.props.changeCurrency(this.state.currency)
+      this.props.changeCurrency(this.state.currency)
     )
   }
 
@@ -30,7 +30,7 @@ class TransactionInput extends Component {
   render() {
     return (
       <div className="row">
-        <div className="task-form col-10 col-md-6 mx-auto text-center">
+        <div className="task-form col-12 col-md-6 mx-auto text-center">
           <div className="input-group">
              <input type="text"
                     className="form-control"

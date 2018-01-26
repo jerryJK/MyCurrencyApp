@@ -6,15 +6,15 @@ import TransactionList from './TransactionList';
 
 class App extends Component {
 
-  constructor(props){
+  constructor(props) {
     super(props);
-    this.state={
-      transactions: [],
-      valueEur: '',
-      valueUsd: '',
-      valueGbp: '',
-      currency:'EUR',
-      max: {}
+    this.state = {
+        transactions: [],
+        valueEur: '',
+        valueUsd: '',
+        valueGbp: '',
+        currency: 'EUR',
+        max: {}
     }
   }
 
@@ -40,7 +40,7 @@ class App extends Component {
   changeCurrency = (curr) => {
     this.setState({
       currency: curr
-    }, () => console.log(this.state.currency))
+    })
   }
 
   calculateValue=(value,currency)=> {
@@ -112,18 +112,23 @@ class App extends Component {
         }, ()=>this.getMaxTransaction(newArr))
   }
 
-  getMaxTransaction =(arr)=> {
+  getMaxTransaction = (arr) => {
       const max = arr.reduce(function(prev, current) {
-        return (prev.valPln > current.valPln) ? prev : current
-      },0)
+          return (prev.valPln > current.valPln)
+              ? prev
+              : current
+      }, 0)
 
-    this.setState({
-      max
-    })
+      this.setState({max})
 
   }
 
   render() {
+
+    let highestTransaction = this.state.transactions.length > 0
+                              ? `The highest transaction: ${this.state.max.value} ${this.state.max.currency} = ${this.state.max.valPln} PLN`
+                              : 'The highest transaction: 0'
+
     return (
         <div className="container">
           <h1 className="text-center app-title py-5">My Currency App</h1>
@@ -143,7 +148,7 @@ class App extends Component {
             deleteTransaction={this.deleteTransaction}
             />
           <p className="col-6 mx-auto text-center bg bg-info p-2">
-            The highest transaction: {this.state.max.value} {this.state.max.currency} = {this.state.max.valPln} PLN
+            {highestTransaction}
           </p>
           <p className="col-6 mx-auto text-center">
             number of transactions: {this.state.transactions.length}

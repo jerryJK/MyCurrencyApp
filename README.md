@@ -6,5 +6,3 @@ App made with create-react-app.
 
 ### working Demo
 www.mca.5v.pl
-
-//under construction
