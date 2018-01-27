@@ -19,21 +19,21 @@ class App extends Component {
   }
 
 
-  changeValueEur = (val) => {
+  changeValueEur = (valueEur) => {
     this.setState({
-      valueEur: val
+      valueEur
     }, this.refreshPrice)
   }
 
-  changeValueUsd = (val) => {
+  changeValueUsd = (valueUsd) => {
     this.setState({
-      valueUsd: val
+      valueUsd
     }, this.refreshPrice)
   }
 
-  changeValueGbp = (val) => {
+  changeValueGbp = (valueGbp) => {
     this.setState({
-      valueGbp: val
+      valueGbp
     }, this.refreshPrice)
   }
 
